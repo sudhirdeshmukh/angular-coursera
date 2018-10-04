@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+  <script src="bindings.js" charset="utf-8"></script>
+</head>
+<body ng-app="NgRepeat">
+  <div class="" ng-controller="NgRepeatController">
+    <ul>
+      <li ng-repeat="name in list1">{{name|uppercase}}</li>
+    </ul>
+    <br><hr>
+    <ul>
+      <li ng-repeat="person in list2">{{ ($index+1) + '. ' + person.name + ' ' +person.surname | uppercase}} <span ng-click="editUser($index)">edit</span></li>
+    </ul>
+
+    <input type="text" name="" ng-model="addname" value="">
+    <input type="text" name="" ng-model="addsurname" value="">
+    <button type="button" ng-click="addUser()" name="button">Add User</button><br><br>
+    <hr>
+    Search User <input type="text" name="" ng-model="search.$" placeholder="search" value=""><br>
+    Search Name <input type="text" name="" ng-model="search.name" value=""><br>
+    Search surname <input type="text" name="" ng-model="search.surname" value=""><br>
+    <input type="checkbox" name="" ng-model="strict" > Equality
+    <ul class="list-unstyled">
+      <li ng-repeat="person in list2 | filter:search:strict">{{ person.name +' '+ person.surname }}</li>
+    </ul>
+
+
+  </div>
+  <hr>
+
+  <div class="" ng-controller="Controller1 as parent">
+    <h3>Scope Inheritance</h3>
+    parent value: {{parent.value}}
+    <div class="" ng-controller="Controller2 as child">
+child value : {{child.value}} <br>
+parent value : {{parent.value}}
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script  src="filters.js"></script>
+  </head>
+  <body ng-app="FilterModule">
+    <div class="" ng-controller="FilterModuleController">
+      {{message | uppercase}} <br>
+      Cookie Cost : {{cookieCost | currency : "Rs ": 2 }} <br>
+      Love Filter in JS  : {{lovesMessage}} <br>
+      Love Filter in HTML : {{message | love | uppercase}} <br>
+      Love Filter in HTML : {{message | lowercase | truth : 'sudhir': 'rajan'  }}
+
+<br><br>
+      <button type="button" ng-click="getAllWatchers()" name="button">Get Watchers</button>
+watchers Count:  {{watchersCount }} <br>
+<br>
+<button type="button" ng-click="upCounter()" name="button">Update Counter</button> {{counter}}
+<br><br>
+Built in Watchers in angular
+<input type="text" ng-model="name" name="" value=""><br><br>
+one time binding username {{::username}} <br>
+
+    </div>
+  </body>
+</html>

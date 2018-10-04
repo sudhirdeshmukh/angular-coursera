@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+    <script src="customServices.js" charset="utf-8"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body ng-app="Shop">
+    <!-- <div class="" ng-controller="AddItem as ai">
+        <input type="text" ng-model="ai.name" name="" placeholder="Item Name" value="">
+        <input type="text" ng-model="ai.qty" name="" placeholder="Quantity" value="">
+        <button type="button" ng-click="ai.addItem();" name="button">Add Item</button>
+
+
+    </div>
+
+    <div class="" ng-controller="DisplayItem as di">
+      <ul class="list-unstyled">
+        <li ng-repeat="itm in di.items">{{itm.Qty}} of {{itm.Name}}
+            <button type="button" ng-click="di.removeItem($index)" name="button">Remove Item</button>
+        </li>
+      </ul>
+    </div> -->
+    <aside class="">
+      <div class="" ng-controller="shoppinglist1 as sl1">
+          <input type="text" ng-model="sl1.name" name="" placeholder="Item Name" value="">
+          <input type="text" ng-model="sl1.qty" name="" placeholder="Quantity" value="">
+          <button type="button" ng-click="sl1.addItem();" name="button">Add Item</button>
+
+          <ul class="list-unstyled">
+            <li ng-repeat="itm in sl1.items">{{itm.Qty}} of {{itm.Name}}
+                <button type="button" ng-click="sl1.removeItem($index)" name="button">Remove Item</button><hr>
+            </li>
+          </ul>
+      </div>
+    </aside>
+
+    <section>
+  <div class="" ng-controller="shoppinglist2 as sl2">
+    <input type="text" ng-model="sl2.name" name="" placeholder="Item Name" value="">
+    <input type="text" ng-model="sl2.qty" name="" placeholder="Quantity" value="">
+    <button type="button" ng-click="sl2.addItem();" name="button">Add Item</button>
+    <ul class="list-unstyled">
+      <li ng-repeat="itm in sl2.items">{{itm.Qty}} of {{itm.Name}}
+          <button type="button" ng-click="sl2.removeItem($index)" name="button">Remove Item</button><hr>
+      </li>
+    </ul><br>
+    <!-- <div class="" ng-if="sl2.errorMessage">
+      {{sl2.errorMessage}}
+    </div> -->
+    <!-- <div class="" ng-show="sl2.errorMessage">
+      {{sl2.errorMessage}}
+    </div> -->
+    <div class="" ng-hide="!sl2.errorMessage">
+      {{sl2.errorMessage}}
+    </div>
+
+
+  </div>
+  <div class="container">
+    <div class="col-md-4 col-md-offset-4">
+      <form name="userform">
+        <fieldset class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" ng-model="ctrl.exampleInputEmail1"  ng-maxlength="50" required placeholder="Enter email">
+          <small class="text-muted">We'll never share your email with anyone else.</small>{{ctrl.exampleInputEmail1}}
+          <span class="alert-warning" ng-if="userform.exampleInputEmail1.$error.required && userform.exampleInputEmail1.$touched">Email Required</span>
+          <span class="alert-danger" ng-if="(userform.exampleInputEmail1.$invalid || userform.exampleInputEmail1.$error.maxlength)  && userform.exampleInputEmail1.$touched">Invalid Email</span>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleSelect1">Example select</label>
+          <select class="form-control" id="exampleSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleTextarea">Example textarea</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" class="form-control-file" id="exampleInputFile">
+          <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+        </fieldset>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+          </label>
+        </div>
+        <div class="radio disabled">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+            Option three is disabled
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+  </div>
+
+  </section>
+  </body>
+</html>
